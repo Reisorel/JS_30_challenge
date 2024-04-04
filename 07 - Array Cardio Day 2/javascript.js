@@ -29,6 +29,7 @@ const allAdult = people.every(person => ((new Date()).
 console.log(allAdult);
 // Array.prototype.find()
 // Find is like filter, but instead returns just the one you are looking fo
+// find the comment with the ID of 823423
 
 const comment = comments.find(function(comment) {
   if (comment.id === 823423) {
@@ -44,12 +45,6 @@ com.id === 823423? true : false);
 
 console.log(com);
 
-// find the comment with the ID of 823423
-
-const index = comments.findIndex(comment => comment.id === 823423);
-console.log(index);
-
-const bam = comments.splice(index, 1);
 
 const newComments = [
   ...comments.slice(0, index),
@@ -57,6 +52,12 @@ const newComments = [
 ];
 
 console.table(newComments)
+
 // Array.prototype.findIndex()
+const index = comments.findIndex(comment => comment.id === 823423);
+
 // Find the comment with this ID
+
 // delete the comment with the ID of 823423
+const bam = comments.splice(index, 1);
+console.log(index);
