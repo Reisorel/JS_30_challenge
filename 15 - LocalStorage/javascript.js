@@ -29,6 +29,49 @@ function populateList(plates = [], platesList) {
   }).join('');
 }
 
+function toggleDone(e) {
+  if(!e.target.matches('input')) return;
+  const el = e.target;
+  const index = el.dataset.index;
+  items[index].done = !items[index].done;
+}
 
-addItems.addEventListener('submit', addItem)
+addItems.addEventListener('submit', addItem);
+itemsList.addEventListener('click', toggleDone);
+
 populateList(items, itemsList)
+
+
+
+
+const checkAllButton = document.getElementById('checkallbutton');
+const menuItems = document.querySelectorAll('.plates li');
+
+function checkAll() {
+  menuItems.forEach(item => {
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    if (checkbox) {
+      checkbox.checked = true;
+      const index = checkbox.dataset.index;
+      items[index].done = true;
+    }
+  });
+}
+
+checkAllButton.addEventListener('click', checkAll)
+
+
+const unCheckAllButton = document.getElementById('uncheckallbutton');
+
+function unCheckAll() {
+  menuItems.forEach(item => {
+    const checkbox = item.querySelector('input[type="checkbox"]');
+    if (checkbox) {
+      checkbox.checked = false;
+      const index = checkbox.dataset.index;
+      items[index].done = false;
+    }
+  });
+}
+
+unCheckAllButton.addEventListener('click', unCheckAll)

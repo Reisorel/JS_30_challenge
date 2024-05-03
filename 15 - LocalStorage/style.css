@@ -79,3 +79,15 @@ h2 {
   outline: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+#checkallbutton,
+#uncheckallbutton {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #d4d4d4; /* Couleur de fond */
+  color: black; /* Couleur du texte */
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
